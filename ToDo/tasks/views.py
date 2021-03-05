@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from .models import Tasks
 
-# Create your views here.
+def show_tasks(request):
+    tasks = Tasks.objects.all()
+    data = {'tasks':tasks}
+    return render(request,'index.html',data)
+
+    
