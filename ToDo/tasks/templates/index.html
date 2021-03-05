@@ -9,10 +9,16 @@
         </div>
         <div class="task-list">
             <ul>
-                <li>aaaaa </li>
+                {% for todo in tasks %}
+                <li>{{todo.task}}                  
                 <div class="icons">
-                    <i class="fas fa-pencil-alt add"></i><i class="fas fa-trash delete"></i>
+                    <i class="fas fa-pencil-alt add">
+                        
+                    </i><i class="fas fa-trash delete"></i>
                 </div>
+               </li>
+                {% endfor %}
+
             </ul>
         </div>
     </div>
