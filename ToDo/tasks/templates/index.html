@@ -5,7 +5,8 @@
         <div class="add-task">
             <form action="submit/" method="post"> {% csrf_token %}
                 <div class="title">Todo Tasks</div>
-                <input class="enter-task" type="text" placeholder="Add a new Task" name="task">
+                <input type="text" value="{{edit.id}}" name="id_task" hidden>
+                <input class="enter-task" type="text" placeholder="add new todo" name="task" value="{{edit.task}}">        
                 <button type="submit" class="btn-task">Add</button>
             </form>
         </div>
@@ -14,9 +15,12 @@
                 {% for todo in tasks %}
                 <li>{{todo.task}}                  
                 <div class="icons">
-                    <i class="fas fa-pencil-alt add">
-
-                    </i><i class="fas fa-trash delete"></i>
+                   <a href="edit/?id={{todo.id}}">
+                        <i class="fas fa-pencil-alt add"></i>
+                   </a>
+                   <a href="delete/{{todo.id}}">
+                        <i class="fas fa-trash delete"></i>
+                    </a>
                 </div>
                </li>
                 {% endfor %}
