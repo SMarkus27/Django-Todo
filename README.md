@@ -1,6 +1,6 @@
 # Introduction
 This is a simple Todo application built off Django.
 
-#Requeriments
+# Requirements
 * Python 3
 * Pipenv
